@@ -13,6 +13,21 @@ namespace ClassLibrary
     /// </summary>
     public class Train
     {
+        private static int count = 0;
+        private string Id{get; set;} //varriable de instancia
+
+        public Train(string id) //constructor 
+        {
+            count++;
+            this.Id=id;
+            Console.WriteLine($"El tren esta en creación: {Id}");
+        }
+
+        ~Train()
+        {
+            count--;
+            Console.WriteLine($"El tren esta en destruccion: {Id}");
+        }
         /// <summary>
         /// Obtiene un valor que indica si las maquinas del tren han sido encendidas o no.
         /// </summary>
